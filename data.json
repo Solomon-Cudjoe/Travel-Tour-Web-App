@@ -1,0 +1,223 @@
+[
+    {   
+        "id": 1,
+        "name": "Caribbean",
+        "desc": "",
+        "population": 44.48,
+        "territory": 275.400,
+        "avgPrice": 946.000,
+        "image": "assets/images/country-01.jpg",
+        "continent": "Europe",
+        "cities":[
+            {
+                "name": "Havana",
+                "image": "assets/images/cities-01.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            },
+            {
+                "name": "Kingston",
+                "image": "assets/images/cities-02.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-02.jpg"
+                }
+
+            },
+            {
+                "name": "George Town",
+                "image": "assets/images/cities-03.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-03.jpg"
+                }
+            },
+            {
+                "name": "Santo Domingo",
+                "image":"assets/images/cities-04.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            }
+        ]    
+    },
+    {
+        "id": 2,
+        "name": "Switzerland",
+        "desc": "",
+        "population": 8.66,
+        "territory": 41.290,
+        "avgPrice":1100.200,
+        "image": "assets/images/country-02.jpg",
+        "continent": "North America",
+        "cities":[
+            {
+                "name": "Zurich",
+                "image": "assets/images/cities-01.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            },
+            {
+                "name": "Lucerne",
+                "image": "assets/images/cities-02.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-02.jpg"
+                }
+            },
+            {
+                "name": "Bern",
+                "image": "assets/images/cities-03.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-03.jpg"
+                }
+            },
+            {
+                "name": "Santo Domingo",
+                "image":"assets/images/cities-04.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            }
+        ]    
+    },
+    {
+        "id": 3,
+        "name": "France",
+        "desc": "",
+        "population": 67.41,
+        "territory": 551.500,
+        "avgPrice": 425.600,
+        "image": "assets/images/country-03.jpg",
+        "continent": "Europe",
+        "cities":[
+            {
+                "name": "Paris",
+                "image": "assets/images/cities-01.jpg",
+                "checkIns": 500,
+                "price": 600,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            },
+            {
+                "name": "Lyon",
+                "image": "assets/images/cities-02.jpg",
+                "checkIns": 300,
+                "price": 480,
+                "offers":{
+                    "image": "assets/images/offers-02.jpg"
+                }
+            },
+            {
+                "name": "Marseille",
+                "image": "assets/images/cities-03.jpg",
+                "checkIns": 400,
+                "price": 550,
+                "offers":{
+                    "image": "assets/images/offers-03.jpg"
+                }
+            },
+            {
+                "name": "Bordeaux",
+                "image":"assets/images/cities-01.jpg",
+                "checkIns": 200,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            },
+            {
+                "name": "Strasbourg",
+                "image":"assets/images/cities-02.jpg",
+                "checkIns": 289,
+                "price": 442,
+                "offers":{
+                    "image": "assets/images/offers-02.jpg"
+                }
+            },
+            {
+                "name": "Nice",
+                "image":"assets/images/cities-03.jpg",
+                "checkIns": 350,
+                "price": 500,
+                "offers":{
+                    "image": "assets/images/offers-03.jpg"
+                }
+            },
+            {
+                "name": "Annecy",
+                "image":"assets/images/cities-04.jpg",
+                "checkIns": 250,
+                "price": 430,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            }
+
+        ]    
+    },
+    {
+        "id": 4,
+        "name": "ThaiLand",
+        "desc": "",
+        "population": 69.86,
+        "territory": 513.120,
+        "avgPrice": 165.450,
+        "image": "assets/images/country-01.jpg",
+        "continent": "Asia",
+        "cities":[
+            {
+                "name": "Havana",
+                "image": "assets/images/cities-01.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            },
+            {
+                "name": "Kingston",
+                "image": "assets/images/cities-02.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-02.jpg"
+                }
+            },
+            {
+                "name": "George Town",
+                "image": "assets/images/cities-03.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-03.jpg"
+                }
+            },
+            {
+                "name": "Santo Domingo",
+                "image":"assets/images/cities-04.jpg",
+                "checkIns": 234,
+                "price": 420,
+                "offers":{
+                    "image": "assets/images/offers-01.jpg"
+                }
+            }
+        ]    
+    }
+]

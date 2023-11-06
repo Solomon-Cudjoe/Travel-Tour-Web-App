@@ -1,7 +1,7 @@
-const generateRoutes = (app, passport, User) => {
+const generateRoutes = (app, passport, User, data) => {
 
     app.get('/', function (req, res) {
-        res.render('index', {currentUser: req.user});
+        res.render('index', {currentUser: req.user,  data});
     });
 
     app.get('/register', function (req, res) {
@@ -20,22 +20,6 @@ const generateRoutes = (app, passport, User) => {
         res.render('reservation', {currentUser: req.user});
     });
 
-    app.get('/caribbean', function (req, res) {
-        res.render('about', {currentUser: req.user});
-    });
-
-    app.get('/france', function (req, res) { 
-        res.render('france', {currentUser: req.user});
-    });
-
-    app.get('/switzerland', function (req, res) { 
-        res.render('switzerland', {currentUser: req.user});
-    });
-
-    app.get('/thailand', function (req, res) {
-        res.send('This would be the thailand page');
-    })
-
     app.get("/logout", function (req, res) {
         req.logout(
             function (err) {
@@ -46,6 +30,16 @@ const generateRoutes = (app, passport, User) => {
                 }
             }
         );
+    });
+
+    app.get('/:countryName', (req, res) => {
+    const countryName = req.params.countryName;
+    const country = data.find(country => country.name === countryName);
+        if (country) {
+        res.render('about', { country, currentUser: req.user });
+    } else {
+        res.redirect('/');
+    }
     });
 
     //post routes

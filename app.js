@@ -7,6 +7,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const User = require("./models/user");
 const expressSession = require("express-session");
 const generateRoutes = require('./routes/routes');
+const data = require('./data.json')
 
 const app = express();
 const port = process.env.PORT || 3100;
@@ -61,7 +62,7 @@ async function main() {
 
 main()
     .then(() => {
-        generateRoutes(app, passport, User);
+        generateRoutes(app, passport, User, data);
         app.listen(port, () => {
             console.log(`Example app listening at http://localhost:${port}`)
         })
@@ -70,4 +71,4 @@ main()
         console.log('Start Up error: ', err)
     })
 
-module.exports = { app, passport };
+module.exports = { app, passport, data };
