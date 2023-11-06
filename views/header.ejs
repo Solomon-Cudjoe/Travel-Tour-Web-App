@@ -57,11 +57,16 @@ https://templatemo.com/tm-580-woox-travel
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
+                      <% if(!currentUser){ %>
                       <li><a href="/">Home</a></li>
                       <li><a href="/deals">Deals</a></li>
-                    
                       <li><a href="/login">Login</a></li>
                       <li><a href="/register">Register</a></li>
+                      <% } else { %>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/deals">Deals</a></li>
+                      <li><a href="/logout">LogOut</a></li>
+                      <% } %>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>

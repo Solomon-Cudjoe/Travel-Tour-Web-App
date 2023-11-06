@@ -1,35 +1,35 @@
 const generateRoutes = (app, passport, User) => {
 
     app.get('/', function (req, res) {
-        res.render('index');
+        res.render('index', {currentUser: req.user});
     });
 
     app.get('/register', function (req, res) {
-        res.render('register');
+        res.render('register', {currentUser: req.user});
     });
 
     app.get('/login', function (req, res) {
-        res.render('login');
+        res.render('login', {currentUser: req.user});
     });
 
     app.get('/deals', function (req, res) {
-        res.render('deals');
+        res.render('deals', {currentUser: req.user});
     });
 
     app.get('/reservation', isLoggedIn, function (req, res) {
-        res.render('reservation');
+        res.render('reservation', {currentUser: req.user});
     });
 
     app.get('/caribbean', function (req, res) {
-        res.render('about');
+        res.render('about', {currentUser: req.user});
     });
 
     app.get('/france', function (req, res) { 
-        res.render('france');
+        res.render('france', {currentUser: req.user});
     });
 
     app.get('/switzerland', function (req, res) { 
-        res.render('switzerland');
+        res.render('switzerland', {currentUser: req.user});
     });
 
     app.get('/thailand', function (req, res) {
@@ -48,13 +48,6 @@ const generateRoutes = (app, passport, User) => {
         );
     });
 
-    function isLoggedIn(req, res, next) {
-        if (req.isAuthenticated()) {
-            return next();
-        }
-        res.redirect("/login");
-    }
-
     //post routes
     app.post("/register", function (req, res) {
         User.register(
@@ -66,7 +59,8 @@ const generateRoutes = (app, passport, User) => {
                     res.redirect("/register");
                 } else {
                     passport.authenticate("local")(req, res, function () {
-                        res.redirect("/login");
+                        console.log(req.user)
+                        res.redirect("/");
                     });
                 }
             })
@@ -76,6 +70,15 @@ const generateRoutes = (app, passport, User) => {
         successRedirect: "/",
         failureRedirect: "/login"
     }))
+
+    function isLoggedIn(req, res, next) {
+        if (req.isAuthenticated()) {
+            return next();
+        }
+        res.redirect("/login");
+    }
 };
+
+    
 
 module.exports = generateRoutes;
