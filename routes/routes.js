@@ -66,7 +66,7 @@ const generateRoutes = (app, passport, User) => {
                     res.redirect("/register");
                 } else {
                     passport.authenticate("local")(req, res, function () {
-                        res.redirect("/");
+                        res.redirect("/login");
                     });
                 }
             })
