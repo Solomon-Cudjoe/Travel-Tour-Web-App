@@ -5,7 +5,19 @@
   "repository": "https://github.com/Solomon-Cudjoe/Travel-Tour-Web-App.git",
   "author": "DavidAdjei <97539347+DavidAdjei@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node signUp.js"
+  },
   "dependencies": {
-    "express": "^4.18.2"
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "html": "^1.0.0",
+    "mongoose": "^8.0.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0"
   }
 }

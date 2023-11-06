@@ -1,31 +1,73 @@
-var express = require('express');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require("passport");
+const localStrategy = require("passport-local");
+const passportLocalMongoose = require("passport-local-mongoose");
+const User = require("./models/user");
+const expressSession = require("express-session");
+const generateRoutes = require('./routes/routes');
 
-var app = express();
+const app = express();
+const port = process.env.PORT || 3100;
 
-app.get('/', function (res, req) {
-    res.render('index.html');
-})
 
-app.get('/register', function (res, req) {
-    res.render('register.html');
-})
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressSession({
+    secret: 'keyboard key',
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get('/login', function (res, req) {
-    res.render('login.html');
-})
 
-app.get('/deals', function (res, req) {
-    res.render('deals.html');
-})
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-app.get('/resevation', function (res, req) {
-    res.render('resevation.html');
-})
+// passport.use(new localStrategy(
+//   function(username, password, done) {
+//     User.findOne({ username: username }, function (err, user) {
+//       if (err) { return done(err); }
+//       if (!user) { return done(null, false); }
+//       if (!user.verifyPassword(password)) { return done(null, false); }
+//       return done(null, user);
+//     });
+//   }
+// ));
 
-app.get('/caribbean', function (res, req) {
-    res.render('about.html');
-})
+// passport.serializeUser(function(user, done) {
+//   done(null, user.id);
+// });
 
-app.get('/france', function (res, req) { 
-    res.render('france.html');
-})
+// passport.deserializeUser(function(id, done) {
+//   User.findById(id, function (err, user) {
+//     done(err, user);
+//   });
+// });
+
+async function main() {
+    try {
+        await mongoose.connect("mongodb://127.0.0.1:27017/travel");
+        console.log("Connected to MongoDB");
+    } catch (error) {
+        console.error("Failed to connect to MongoDB:", error);
+        throw error;
+    }
+}
+
+main()
+    .then(() => {
+        generateRoutes(app, passport, User);
+        app.listen(port, () => {
+            console.log(`Example app listening at http://localhost:${port}`)
+        })
+    })
+    .catch((err) => {
+        console.log('Start Up error: ', err)
+    })
+
+module.exports = { app, passport };
