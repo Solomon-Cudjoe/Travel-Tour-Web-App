@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Content</h1>
+    <form id="adminForm" action="/addContent" method="post">
+        <label for="countryName">Country Name:</label>
+        <input type="text" id="countryName" name="countryName" required><br><br>
+
+        <!-- Add more fields as needed -->
+
+        <button type="submit">Add Content</button>
+    </form>
+
+    <h1>Manage Content</h1>
+    <h2>Countries:</h2>
+    <ul>
+        <% data.countries.forEach(function(country) { %>
+            <li>
+                <strong>Name:</strong> <%= country.name %><br>
+                <strong>Population:</strong> <%= country.population %><br>
+                <strong>Continent:</strong> <%= country.continent %>
+                <form action="/deleteCountry" method="post">
+                    <input type="hidden" name="countryId" value="<%= country.id %>">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+
+    <h2>Deals:</h2>
+    <ul>
+        <% data.deals.forEach(function(deal) { %>
+            <li>
+                <strong>City Name:</strong> <%= deal.cityName %><br>
+                <strong>Type:</strong> <%= deal.type %><br>
+                <strong>Duration:</strong> <%= deal.duration %>
+                <form action="/deleteDeal" method="post">
+                    <input type="hidden" name="dealId" value="<%= deal.id %>">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+
+<%- include('footer'); -%>

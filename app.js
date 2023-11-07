@@ -8,6 +8,7 @@ const User = require("./models/user");
 const expressSession = require("express-session");
 const generateRoutes = require('./routes/routes');
 const data = require('./data.json')
+const fs = require('fs')
 
 const app = express();
 const port = process.env.PORT || 3100;
