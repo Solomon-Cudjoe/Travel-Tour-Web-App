@@ -10,6 +10,10 @@
         "avgPrice": 946.000,
         "image": "assets/images/country-01.jpg",
         "continent": "Europe",
+        "css":{
+            "background": "/assets/images/about-content-bg.jpg",
+            "blur": "/assets/images/about-content-bg.jpg"
+        },
         "cities":[
             {
                 "name": "Havana",
@@ -60,6 +64,10 @@
         "avgPrice":1100.200,
         "image": "assets/images/country-02.jpg",
         "continent": "North America",
+        "css":{
+            "background": "/assets/images/about-content-bg.jpg",
+            "blur": "/assets/images/about-content-bg.jpg"
+        },
         "cities":[
             {
                 "name": "Zurich",
@@ -109,6 +117,10 @@
         "avgPrice": 425.600,
         "image": "assets/images/country-03.jpg",
         "continent": "Europe",
+        "css":{
+            "background": "/assets/images/Paris.jpeg",
+            "blur": "/assets/images/Paris.jpeg"
+        },
         "cities":[
             {
                 "name": "Paris",
@@ -186,6 +198,10 @@
         "avgPrice": 165.450,
         "image": "assets/images/country-01.jpg",
         "continent": "Asia",
+        "css":{
+            "background": "/assets/images/about-content-bg.jpg",
+            "blur": "/assets/images/about-content-bg.jpg"
+        },
         "cities":[
             {
                 "name": "Havana",
