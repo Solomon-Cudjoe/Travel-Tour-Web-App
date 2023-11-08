@@ -1,283 +1,307 @@
 {
-    "countries": [
-    {   
-        "id": 1,
-        "name": "Caribbean",
-        "desc": "The Caribbean, a tropical paradise, is a region of stunning beauty and cultural diversity. It comprises a mosaic of islands with powdery beaches, crystal-clear waters, and lush rainforests. Its warm, inviting climate and vibrant, laid-back atmosphere make it a coveted destination for relaxation and adventure. The region's rich history blends indigenous, European, African, and Asian influences, creating a unique tapestry of music, cuisine, and traditions. Whether exploring historic sites, snorkeling in vibrant reefs, or simply lounging on the beach, the Caribbean offers a dreamlike escape.",
-        "desc2": "The Caribbean is a tropical haven, boasting powdery beaches, crystal-clear waters, and a rich cultural tapestry, creating a unique blend of relaxation and adventure",
-        "population": 44.48,
-        "territory": 275.400,
-        "avgPrice": 946.000,
-        "image": "assets/images/country-01.jpg",
-        "continent": "Europe",
-        "css":{
-            "background": "/assets/images/about-content-bg.jpg",
-            "blur": "/assets/images/about-content-bg.jpg"
+  "countries": [
+    {
+      "id": 1,
+      "name": "Caribbean",
+      "desc": "The Caribbean, a tropical paradise, is a region of stunning beauty and cultural diversity. It comprises a mosaic of islands with powdery beaches, crystal-clear waters, and lush rainforests. Its warm, inviting climate and vibrant, laid-back atmosphere make it a coveted destination for relaxation and adventure. The region's rich history blends indigenous, European, African, and Asian influences, creating a unique tapestry of music, cuisine, and traditions. Whether exploring historic sites, snorkeling in vibrant reefs, or simply lounging on the beach, the Caribbean offers a dreamlike escape.",
+      "desc2": "The Caribbean is a tropical haven, boasting powdery beaches, crystal-clear waters, and a rich cultural tapestry, creating a unique blend of relaxation and adventure",
+      "population": 44.48,
+      "territory": 275.4,
+      "avgPrice": 946,
+      "image": "assets/images/country-01.jpg",
+      "continent": "Europe",
+      "css": {
+        "background": "/assets/images/about-content-bg.jpg",
+        "blur": "/assets/images/about-content-bg.jpg"
+      },
+      "cities": [
+        {
+          "name": "Havana",
+          "image": "assets/images/cities-01.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
         },
-        "cities":[
-            {
-                "name": "Havana",
-                "image": "assets/images/cities-01.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            },
-            {
-                "name": "Kingston",
-                "image": "assets/images/cities-02.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-02.jpg"
-                }
-
-            },
-            {
-                "name": "George Town",
-                "image": "assets/images/cities-03.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-03.jpg"
-                }
-            },
-            {
-                "name": "Santo Domingo",
-                "image":"assets/images/cities-04.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            }
-        ]    
+        {
+          "name": "Kingston",
+          "image": "assets/images/cities-02.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-02.jpg"
+          }
+        },
+        {
+          "name": "George Town",
+          "image": "assets/images/cities-03.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-03.jpg"
+          }
+        },
+        {
+          "name": "Santo Domingo",
+          "image": "assets/images/cities-04.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
+        }
+      ]
     },
     {
-        "id": 2,
-        "name": "Switzerland",
-        "desc": "Switzerland, nestled in the heart of the Alps, is a picturesque European nation celebrated for its natural beauty and precision engineering. Its stunning landscapes encompass snow-capped mountains, pristine lakes, and lush meadows. Renowned for Swiss watches, chocolates, and efficient public transport, the country is a model of precision and quality. Switzerland's charming cities, including Zurich and Geneva, are centers of finance and culture, while its ski resorts and hiking trails provide year-round outdoor adventures.",
-        "desc2": "Nestled in the Alps, Switzerland is celebrated for precision engineering, stunning landscapes, and vibrant cities like Zurich and Geneva, making it a model of efficiency and natural beauty.",
-        "population": 8.66,
-        "territory": 41.290,
-        "avgPrice":1100.200,
-        "image": "assets/images/country-02.jpg",
-        "continent": "North America",
-        "css":{
-            "background": "/assets/images/about-content-bg.jpg",
-            "blur": "/assets/images/about-content-bg.jpg"
+      "id": 2,
+      "name": "Switzerland",
+      "desc": "Switzerland, nestled in the heart of the Alps, is a picturesque European nation celebrated for its natural beauty and precision engineering. Its stunning landscapes encompass snow-capped mountains, pristine lakes, and lush meadows. Renowned for Swiss watches, chocolates, and efficient public transport, the country is a model of precision and quality. Switzerland's charming cities, including Zurich and Geneva, are centers of finance and culture, while its ski resorts and hiking trails provide year-round outdoor adventures.",
+      "desc2": "Nestled in the Alps, Switzerland is celebrated for precision engineering, stunning landscapes, and vibrant cities like Zurich and Geneva, making it a model of efficiency and natural beauty.",
+      "population": 8.66,
+      "territory": 41.29,
+      "avgPrice": 1100.2,
+      "image": "assets/images/country-02.jpg",
+      "continent": "North America",
+      "css": {
+        "background": "/assets/images/about-content-bg.jpg",
+        "blur": "/assets/images/about-content-bg.jpg"
+      },
+      "cities": [
+        {
+          "name": "Zurich",
+          "image": "assets/images/cities-01.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
         },
-        "cities":[
-            {
-                "name": "Zurich",
-                "image": "assets/images/cities-01.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            },
-            {
-                "name": "Lucerne",
-                "image": "assets/images/cities-02.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-02.jpg"
-                }
-            },
-            {
-                "name": "Bern",
-                "image": "assets/images/cities-03.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-03.jpg"
-                }
-            },
-            {
-                "name": "Santo Domingo",
-                "image":"assets/images/cities-04.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            }
-        ]    
+        {
+          "name": "Lucerne",
+          "image": "assets/images/cities-02.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-02.jpg"
+          }
+        },
+        {
+          "name": "Bern",
+          "image": "assets/images/cities-03.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-03.jpg"
+          }
+        },
+        {
+          "name": "Santo Domingo",
+          "image": "assets/images/cities-04.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
+        }
+      ]
     },
     {
-        "id": 3,
-        "name": "France",
-        "desc": "France, a captivating European nation, seamlessly blends the old and the new. Its iconic landmarks like the Eiffel Tower, charming Parisian streets, and majestic Loire Valley Châteaux offer visual delights. The country's culinary expertise shines with gourmet cheeses, fine wines, and world-class cuisine. Diverse landscapes feature the French Riviera's sun-soaked beaches, the majestic Alps for winter sports, and picturesque vineyards in regions like Bordeaux and Burgundy. History echoes through medieval villages, Gothic cathedrals, and renowned museums like the Louvre. France is synonymous with art, fashion, and timeless elegance, beckoning travelers to immerse in its culture and beauty.",
-        "desc2": "France captivates with its romantic allure, rich history, and gourmet cuisine, offering iconic landmarks and diverse landscapes, from Paris to the Loire Valley.",
-        "population": 67.41,
-        "territory": 551.500,
-        "avgPrice": 425.600,
-        "image": "assets/images/country-03.jpg",
-        "continent": "Europe",
-        "css":{
-            "background": "/assets/images/Paris.jpeg",
-            "blur": "/assets/images/Paris.jpeg"
+      "id": 3,
+      "name": "France",
+      "desc": "France, a captivating European nation, seamlessly blends the old and the new. Its iconic landmarks like the Eiffel Tower, charming Parisian streets, and majestic Loire Valley Châteaux offer visual delights. The country's culinary expertise shines with gourmet cheeses, fine wines, and world-class cuisine. Diverse landscapes feature the French Riviera's sun-soaked beaches, the majestic Alps for winter sports, and picturesque vineyards in regions like Bordeaux and Burgundy. History echoes through medieval villages, Gothic cathedrals, and renowned museums like the Louvre. France is synonymous with art, fashion, and timeless elegance, beckoning travelers to immerse in its culture and beauty.",
+      "desc2": "France captivates with its romantic allure, rich history, and gourmet cuisine, offering iconic landmarks and diverse landscapes, from Paris to the Loire Valley.",
+      "population": 67.41,
+      "territory": 551.5,
+      "avgPrice": 425.6,
+      "image": "assets/images/country-03.jpg",
+      "continent": "Europe",
+      "css": {
+        "background": "/assets/images/Paris.jpeg",
+        "blur": "/assets/images/Paris.jpeg"
+      },
+      "cities": [
+        {
+          "name": "Paris",
+          "image": "assets/images/cities-01.jpg",
+          "checkIns": 500,
+          "price": 600,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
         },
-        "cities":[
-            {
-                "name": "Paris",
-                "image": "assets/images/cities-01.jpg",
-                "checkIns": 500,
-                "price": 600,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            },
-            {
-                "name": "Lyon",
-                "image": "assets/images/cities-02.jpg",
-                "checkIns": 300,
-                "price": 480,
-                "offers":{
-                    "image": "assets/images/offers-02.jpg"
-                }
-            },
-            {
-                "name": "Marseille",
-                "image": "assets/images/cities-03.jpg",
-                "checkIns": 400,
-                "price": 550,
-                "offers":{
-                    "image": "assets/images/offers-03.jpg"
-                }
-            },
-            {
-                "name": "Bordeaux",
-                "image":"assets/images/cities-01.jpg",
-                "checkIns": 200,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            },
-            {
-                "name": "Strasbourg",
-                "image":"assets/images/cities-02.jpg",
-                "checkIns": 289,
-                "price": 442,
-                "offers":{
-                    "image": "assets/images/offers-02.jpg"
-                }
-            },
-            {
-                "name": "Nice",
-                "image":"assets/images/cities-03.jpg",
-                "checkIns": 350,
-                "price": 500,
-                "offers":{
-                    "image": "assets/images/offers-03.jpg"
-                }
-            },
-            {
-                "name": "Annecy",
-                "image":"assets/images/cities-04.jpg",
-                "checkIns": 250,
-                "price": 430,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            }
-
-        ]    
+        {
+          "name": "Lyon",
+          "image": "assets/images/cities-02.jpg",
+          "checkIns": 300,
+          "price": 480,
+          "offers": {
+            "image": "assets/images/offers-02.jpg"
+          }
+        },
+        {
+          "name": "Marseille",
+          "image": "assets/images/cities-03.jpg",
+          "checkIns": 400,
+          "price": 550,
+          "offers": {
+            "image": "assets/images/offers-03.jpg"
+          }
+        },
+        {
+          "name": "Bordeaux",
+          "image": "assets/images/cities-01.jpg",
+          "checkIns": 200,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
+        },
+        {
+          "name": "Strasbourg",
+          "image": "assets/images/cities-02.jpg",
+          "checkIns": 289,
+          "price": 442,
+          "offers": {
+            "image": "assets/images/offers-02.jpg"
+          }
+        },
+        {
+          "name": "Nice",
+          "image": "assets/images/cities-03.jpg",
+          "checkIns": 350,
+          "price": 500,
+          "offers": {
+            "image": "assets/images/offers-03.jpg"
+          }
+        },
+        {
+          "name": "Annecy",
+          "image": "assets/images/cities-04.jpg",
+          "checkIns": 250,
+          "price": 430,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
+        }
+      ]
     },
     {
-        "id": 4,
-        "name": "ThaiLand",
-        "desc": "Thailand, a vibrant Southeast Asian gem, entices with its exotic charm and diverse experiences. It's a land of contrast, from bustling metropolises like Bangkok to tranquil temples and tropical islands. Rich in culture and cuisine, it offers tantalizing street food, ancient temples, and colorful festivals. The country's idyllic beaches, lush jungles, and friendly locals make it a popular destination for adventure seekers and those seeking relaxation. Thailand's unique blend of tradition and modernity creates a captivating tapestry for travelers to explore.",
-        "desc2": "Thailand's exotic charm, vibrant cities, and stunning landscapes draw travelers with a mix of culture, cuisine, and tropical beauty, offering a blend of tradition and modernity.",
-        "population": 69.86,
-        "territory": 513.120,
-        "avgPrice": 165.450,
-        "image": "assets/images/country-01.jpg",
-        "continent": "Asia",
-        "css":{
-            "background": "/assets/images/about-content-bg.jpg",
-            "blur": "/assets/images/about-content-bg.jpg"
+      "id": 4,
+      "name": "ThaiLand",
+      "desc": "Thailand, a vibrant Southeast Asian gem, entices with its exotic charm and diverse experiences. It's a land of contrast, from bustling metropolises like Bangkok to tranquil temples and tropical islands. Rich in culture and cuisine, it offers tantalizing street food, ancient temples, and colorful festivals. The country's idyllic beaches, lush jungles, and friendly locals make it a popular destination for adventure seekers and those seeking relaxation. Thailand's unique blend of tradition and modernity creates a captivating tapestry for travelers to explore.",
+      "desc2": "Thailand's exotic charm, vibrant cities, and stunning landscapes draw travelers with a mix of culture, cuisine, and tropical beauty, offering a blend of tradition and modernity.",
+      "population": 69.86,
+      "territory": 513.12,
+      "avgPrice": 165.45,
+      "image": "assets/images/country-01.jpg",
+      "continent": "Asia",
+      "css": {
+        "background": "/assets/images/about-content-bg.jpg",
+        "blur": "/assets/images/about-content-bg.jpg"
+      },
+      "cities": [
+        {
+          "name": "Havana",
+          "image": "assets/images/cities-01.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
         },
-        "cities":[
-            {
-                "name": "Havana",
-                "image": "assets/images/cities-01.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            },
-            {
-                "name": "Kingston",
-                "image": "assets/images/cities-02.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-02.jpg"
-                }
-            },
-            {
-                "name": "George Town",
-                "image": "assets/images/cities-03.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-03.jpg"
-                }
-            },
-            {
-                "name": "Santo Domingo",
-                "image":"assets/images/cities-04.jpg",
-                "checkIns": 234,
-                "price": 420,
-                "offers":{
-                    "image": "assets/images/offers-01.jpg"
-                }
-            }
-        ]    
+        {
+          "name": "Kingston",
+          "image": "assets/images/cities-02.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-02.jpg"
+          }
+        },
+        {
+          "name": "George Town",
+          "image": "assets/images/cities-03.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-03.jpg"
+          }
+        },
+        {
+          "name": "Santo Domingo",
+          "image": "assets/images/cities-04.jpg",
+          "checkIns": 234,
+          "price": 420,
+          "offers": {
+            "image": "assets/images/offers-01.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ghana",
+      "desc": "Ghana is a peace country with a lot of infrastructures to bolster the progress of the young minds in the country",
+      "desc2": "Peace is everything in Ghana",
+      "population": "29.1",
+      "territory": "45.1",
+      "avgPrice": "100",
+      "image": "https://monrovia.mfa.gov.gh/uploads/SectionImages/11056_11284_file-20190627-76697-1ttsnl7.jpg",
+      "continent": "Africa",
+      "css": {
+        "background": "https://i.natgeofe.com/k/fc783901-1999-47a5-81f0-049a7530d632/ghana-beach-boats_16x9.jpg?w=1200",
+        "blur": "https://i.natgeofe.com/k/fc783901-1999-47a5-81f0-049a7530d632/ghana-beach-boats_16x9.jpg?w=1200"
+      },
+      "cities": [
+        {
+          "name": "Accra",
+          "image": "https://www.nairaland.com/attachments/11655413_accraplaces3_jpeg79ca30b9d6d7c1966e0df1bad16039ee",
+          "checkIns": "100",
+          "price": "400",
+          "offers": {
+            "image": "https://www.travelstart.com.ng/blog/wp-content/uploads/2016/08/Golden-Tulip-Hotel-travelstart.jpg"
+          }
+        }
+      ]
     }
-],
-"deals":[
+  ],
+  "deals": [
     {
-        "cityName": "Glasgow City",
-        "desc": "",
-        "type": "Limited Offer",
-        "duration": "5 days",
-        "location": "Caribbean",
-        "image": "assets/images/deals-01.jpg",
-        "price": 700
+      "cityName": "Glasgow City",
+      "desc": "",
+      "type": "Limited Offer",
+      "duration": "5 days",
+      "location": "Caribbean",
+      "image": "assets/images/deals-01.jpg",
+      "price": 700
     },
     {
-        "cityName": "Venezia Italy",
-        "desc": "",
-        "type": "Today & Tomorrow Only",
-        "duration": "5 days",
-        "location": "Italy",
-        "image": "assets/images/deals-02.jpg",
-        "price": 1100
+      "cityName": "Venezia Italy",
+      "desc": "",
+      "type": "Today & Tomorrow Only",
+      "duration": "5 days",
+      "location": "Italy",
+      "image": "assets/images/deals-02.jpg",
+      "price": 1100
     },
     {
-        "cityName": "Glasgow City",
-        "desc": "",
-        "type": "Undefined",
-        "duration": "5 days",
-        "location": "Caribbean",
-        "image": "assets/images/deals-03.jpg",
-        "price": 500
+      "cityName": "Glasgow City",
+      "desc": "",
+      "type": "Undefined",
+      "duration": "5 days",
+      "location": "Caribbean",
+      "image": "assets/images/deals-03.jpg",
+      "price": 500
     },
     {
-        "cityName": "Glasgow City",
-        "desc": "",
-        "type": "Offer Until 24th December",
-        "duration": "5 days",
-        "location": "Caribbean",
-        "image": "assets/images/deals-04.jpg",
-        "price": 300
+      "cityName": "Glasgow City",
+      "desc": "",
+      "type": "Offer Until 24th December",
+      "duration": "5 days",
+      "location": "Caribbean",
+      "image": "assets/images/deals-04.jpg",
+      "price": 300
     }
-]
+  ]
 }

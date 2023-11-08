@@ -89,10 +89,31 @@ const generateRoutes = (app, passport, User, data, fs) => {
 
     // Handle form submission to add content
     app.post('/addContent', (req, res) => {
-        const countryName = req.body.countryName;
+        const countryName = req.body.countryName,
+            desc = req.body.desc,
+            desc2 = req.body.desc2,
+            population = req.body.population,
+            territory = req.body.territory,
+            avgPrice = req.body.avgPrice,
+            image = req.body.image,
+            continent = req.body.continent,
+            cssImage = req.body.cssImage;
+
         const newContent = {
-            "id": generateUniqueId(), // Implement a function to generate a unique ID
+            "id": generateUniqueId(data), // Implement a function to generate a unique ID
             "name": countryName,
+            "desc": desc,
+            "desc2": desc2,
+            "population": population,
+            "territory": territory,
+            "avgPrice": avgPrice,
+            "image": image,
+            "continent": continent,
+            "css": {
+                "background": cssImage,
+                "blur": cssImage
+            },
+            "cities":[]
             // Set other properties based on form input
         };
 
@@ -104,6 +125,30 @@ const generateRoutes = (app, passport, User, data, fs) => {
 
         res.redirect('/admin');
     });
+
+    app.post('/addCity', (req, res) => {
+        const countryName = req.body.country,
+            city = req.body.cityName,
+            image = req.body.image,
+            checkIns = req.body.checkIns,
+            price = req.body.price,
+            secImage = req.body.secondImage;
+        
+       
+
+        const newCity = {
+            "name": city,
+            "image": image,
+            "checkIns": checkIns,
+            "price": price,
+            "offers": {
+                "image": secImage
+            }
+        }
+        data.countries.find(country => country.name === countryName).cities.push(newCity);
+        fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+        res.redirect('/admin');
+    })
 
     // Handle form submission to delete a country
     app.post('/deleteCountry', (req, res) => {
@@ -135,7 +180,8 @@ const generateRoutes = (app, passport, User, data, fs) => {
     }
 
     function generateUniqueId(someData) {
-    var someId
+        var someId = someData.countries.length + 1;
+        return someId;
 }
 };
 module.exports = generateRoutes;

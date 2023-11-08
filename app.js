@@ -63,7 +63,7 @@ async function main() {
 
 main()
     .then(() => {
-        generateRoutes(app, passport, User, data);
+        generateRoutes(app, passport, User, data, fs);
         app.listen(port, () => {
             console.log(`Example app listening at http://localhost:${port}`)
         })
@@ -72,4 +72,4 @@ main()
         console.log('Start Up error: ', err)
     })
 
-module.exports = { app, passport, data };
+module.exports = { app, passport, data, fs };

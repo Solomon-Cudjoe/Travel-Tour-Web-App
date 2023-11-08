@@ -1,21 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Add Content</h1>
-    <form id="adminForm" action="/addContent" method="post">
-        <label for="countryName">Country Name:</label>
-        <input type="text" id="countryName" name="countryName" required><br><br>
+<%- include('header'); -%>
 
-        <!-- Add more fields as needed -->
+    <div class="reservation-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="reservation-form"  method="POST"  action="/addContent"
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 3rem;">
+                        <div class="col-lg-12">
+                            <h1>Add Country</h1>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Name:</label>
+                                <input type="text" id="countryName" name="countryName" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Description:</label>
+                                <input type="text" id="countryName" name="desc" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Short Description:</label>
+                                <input type="text" id="countryName" name="desc2" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Population:</label>
+                                <input type="text" id="countryName" name="population" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Territory:</label>
+                                <input type="text" id="countryName" name="territory" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Average Housing Price:</label>
+                                <input type="text" id="countryName" name="avgPrice" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Image:</label>
+                                <input type="text" id="countryName" name="image" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Continent:</label>
+                                <input type="text" id="countryName" name="continent" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Background Image</label>
+                                <input type="text" id="countryName" name="cssImage" required><br><br>
+                            </fieldset>
+                        </div>
+                        <!-- <div class="col-md-12">
+                            <fieldset>
+                                <label for="countryName">Country Name:</label>
+                                <input type="text" id="countryName" name="countryName" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <label for="countryName">Country Name:</label>
+                                <input type="text" id="countryName" name="countryName" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <label for="countryName">Country Name:</label>
+                                <input type="text" id="countryName" name="countryName" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <label for="countryName">Country Name:</label>
+                                <input type="text" id="countryName" name="countryName" required><br><br>
+                            </fieldset>
+                        </div> -->
+                    <!-- Add more fields as needed -->
+                        <button class="col-sm-5" type="submit">Add Content</button>
+                    </form>
+                </div>
 
-        <button type="submit">Add Content</button>
-    </form>
-
+                <div class="col-lg-12">
+                    <form action="/addCity" method="post" id="reservation-form"
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 1rem;">
+                        <div class="col-lg-12">
+                            <h1>Add City</h1>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Add to which Country</label>
+                                <input type="text" id="countryName" name="country" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Name of city</label>
+                                <input type="text" id="countryName" name="cityName" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Image Link</label>
+                                <input type="text" id="countryName" name="image" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Number of check-ins</label>
+                                <input type="text" id="countryName" name="checkIns" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Price of trip</label>
+                                <input type="text" id="countryName" name="price" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Link to second image</label>
+                                <input type="text" id="countryName" name="secondImage" required><br><br>
+                            </fieldset>
+                        </div>
+                         <button class="col-sm-5" type="submit">Add Content</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <h1>Manage Content</h1>
     <h2>Countries:</h2>
     <ul>
