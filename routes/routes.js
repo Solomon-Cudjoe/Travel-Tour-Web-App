@@ -116,11 +116,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
             "cities":[]
             // Set other properties based on form input
         };
-
-        // Add the new content to the JSON data
         data.countries.push(newContent);
-
-        // Save the updated JSON data to the file (add error handling)
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
         res.redirect('/admin');
@@ -133,9 +129,6 @@ const generateRoutes = (app, passport, User, data, fs) => {
             checkIns = req.body.checkIns,
             price = req.body.price,
             secImage = req.body.secondImage;
-        
-       
-
         const newCity = {
             "name": city,
             "image": image,
@@ -154,8 +147,6 @@ const generateRoutes = (app, passport, User, data, fs) => {
     app.post('/deleteCountry', (req, res) => {
         const countryId = parseInt(req.body.countryId);
         data.countries = data.countries.filter(country => country.id !== countryId);
-
-        // Save the updated JSON data to the file (add error handling)
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
         res.redirect('/admin');
@@ -165,10 +156,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
     app.post('/deleteDeal', (req, res) => {
         const dealId = parseInt(req.body.dealId);
         data.deals = data.deals.filter(deal => deal.id !== dealId);
-
-        // Save the updated JSON data to the file (add error handling)
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-
         res.redirect('/admin');
     });
 

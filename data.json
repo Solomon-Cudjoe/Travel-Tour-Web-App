@@ -268,6 +268,7 @@
   ],
   "deals": [
     {
+
       "cityName": "Glasgow City",
       "desc": "",
       "type": "Limited Offer",
@@ -277,6 +278,7 @@
       "price": 700
     },
     {
+
       "cityName": "Venezia Italy",
       "desc": "",
       "type": "Today & Tomorrow Only",
@@ -286,6 +288,7 @@
       "price": 1100
     },
     {
+
       "cityName": "Glasgow City",
       "desc": "",
       "type": "Undefined",
@@ -295,6 +298,7 @@
       "price": 500
     },
     {
+      
       "cityName": "Glasgow City",
       "desc": "",
       "type": "Offer Until 24th December",
