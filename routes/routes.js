@@ -48,7 +48,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
         );
     });
 
-    app.get('/admin', (req, res) => {
+    app.get('/admin', isAdmin , (req, res) => {
         res.render('admin', { data, currentUser: req.user });
     });
 
@@ -65,7 +65,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
     //post routes
     app.post("/register", function (req, res) {
         User.register(
-            new User({ username: req.body.username, email: req.body.email }),
+            new User({ username: req.body.username, email: req.body.email, isAdmin: false}),
             req.body.password,
             function (err, user) {
                 if (err) {
@@ -165,6 +165,15 @@ const generateRoutes = (app, passport, User, data, fs) => {
             return next();
         }
         res.redirect("/login");
+    }
+
+    function isAdmin(req, res, next) {
+        if (req.isAuthenticated() && req.user.isAdmin ) {
+            return next();
+        } else {
+            res.redirect("/");
+            console.log('You are not an administrator')
+        }
     }
 
     function generateUniqueId(someData) {

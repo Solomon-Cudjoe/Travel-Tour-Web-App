@@ -63,10 +63,15 @@ https://templatemo.com/tm-580-woox-travel
                       <li><a href="/deals">Deals</a></li>
                       <li><a href="/login">Login</a></li>
                       <li><a href="/register">Register</a></li>
-                      <% } else { %>
+                      <% } else if( currentUser.isAdmin ) { %>
                       <li><a href="/">Home</a></li>
+                      <li><a href="/admin">Admin</a></li>
                       <li><a href="/deals">Deals</a></li>
                       <li><a href="/logout">LogOut</a></li>
+                      <% } else {%>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/deals">Deals</a></li>
+                        <li><a href="/logout">LogOut</a></li>
                       <% } %>
                     </ul>   
                     <a class='menu-trigger'>

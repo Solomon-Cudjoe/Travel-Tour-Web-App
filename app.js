@@ -9,7 +9,6 @@ const expressSession = require("express-session");
 const generateRoutes = require('./routes/routes');
 const data = require('./data.json')
 const fs = require('fs')
-
 const app = express();
 const port = process.env.PORT || 3100;
 
@@ -29,27 +28,6 @@ app.use(passport.session());
 passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-// passport.use(new localStrategy(
-//   function(username, password, done) {
-//     User.findOne({ username: username }, function (err, user) {
-//       if (err) { return done(err); }
-//       if (!user) { return done(null, false); }
-//       if (!user.verifyPassword(password)) { return done(null, false); }
-//       return done(null, user);
-//     });
-//   }
-// ));
-
-// passport.serializeUser(function(user, done) {
-//   done(null, user.id);
-// });
-
-// passport.deserializeUser(function(id, done) {
-//   User.findById(id, function (err, user) {
-//     done(err, user);
-//   });
-// });
 
 async function main() {
     try {

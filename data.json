@@ -238,37 +238,10 @@
           }
         }
       ]
-    },
-    {
-      "id": 5,
-      "name": "Ghana",
-      "desc": "Ghana is a peace country with a lot of infrastructures to bolster the progress of the young minds in the country",
-      "desc2": "Peace is everything in Ghana",
-      "population": "29.1",
-      "territory": "45.1",
-      "avgPrice": "100",
-      "image": "https://monrovia.mfa.gov.gh/uploads/SectionImages/11056_11284_file-20190627-76697-1ttsnl7.jpg",
-      "continent": "Africa",
-      "css": {
-        "background": "https://i.natgeofe.com/k/fc783901-1999-47a5-81f0-049a7530d632/ghana-beach-boats_16x9.jpg?w=1200",
-        "blur": "https://i.natgeofe.com/k/fc783901-1999-47a5-81f0-049a7530d632/ghana-beach-boats_16x9.jpg?w=1200"
-      },
-      "cities": [
-        {
-          "name": "Accra",
-          "image": "https://www.nairaland.com/attachments/11655413_accraplaces3_jpeg79ca30b9d6d7c1966e0df1bad16039ee",
-          "checkIns": "100",
-          "price": "400",
-          "offers": {
-            "image": "https://www.travelstart.com.ng/blog/wp-content/uploads/2016/08/Golden-Tulip-Hotel-travelstart.jpg"
-          }
-        }
-      ]
     }
   ],
   "deals": [
     {
-
       "cityName": "Glasgow City",
       "desc": "",
       "type": "Limited Offer",
@@ -278,7 +251,6 @@
       "price": 700
     },
     {
-
       "cityName": "Venezia Italy",
       "desc": "",
       "type": "Today & Tomorrow Only",
@@ -288,7 +260,6 @@
       "price": 1100
     },
     {
-
       "cityName": "Glasgow City",
       "desc": "",
       "type": "Undefined",
@@ -298,7 +269,6 @@
       "price": 500
     },
     {
-      
       "cityName": "Glasgow City",
       "desc": "",
       "type": "Offer Until 24th December",
