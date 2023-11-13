@@ -8,6 +8,17 @@ const generateRoutes = (app, passport, User, data, fs) => {
         res.render('register', {currentUser: req.user});
     });
 
+    app.get('/auth/google',
+        passport.authenticate('google', { scope:
+            [ 'email', 'profile' ] }
+    ));
+
+    app.get( '/auth/google/callback',
+        passport.authenticate( 'google', {
+            successRedirect: '/',
+            failureRedirect: '/register'
+    }));
+
     app.get('/login', function (req, res) {
         res.render('login', {currentUser: req.user});
     });
@@ -75,6 +86,23 @@ const generateRoutes = (app, passport, User, data, fs) => {
                     passport.authenticate("local")(req, res, function () {
                         console.log(req.user)
                         res.redirect("/");
+                    });
+                }
+            })
+    })
+
+    app.post("/createAdmin", function (req, res) {
+        User.register(
+            new User({ username: req.body.username, email: req.body.email, isAdmin: true}),
+            req.body.password,
+            function (err, user) {
+                if (err) {
+                    console.log(err);
+                    res.redirect("/register");
+                } else {
+                    passport.authenticate("local")(req, res, function () {
+                        console.log(req.user)
+                        res.redirect("/admin");
                     });
                 }
             })
@@ -175,6 +203,8 @@ const generateRoutes = (app, passport, User, data, fs) => {
             console.log('You are not an administrator')
         }
     }
+
+
 
     function generateUniqueId(someData) {
         var someId = someData.countries.length + 1;

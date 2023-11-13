@@ -11,7 +11,8 @@ const data = require('./data.json')
 const fs = require('fs')
 const app = express();
 const port = process.env.PORT || 3100;
-
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
+require('dotenv').config();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -26,8 +27,32 @@ app.use(passport.session());
 
 
 passport.use(new localStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.use(new GoogleStrategy({
+    clientID:     process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: "http://localhost:3100/auth/google/callback",
+    passReqToCallback   : true
+  },
+    function (request, accessToken, refreshToken, profile, done) {
+        User.createStrategy();
+        User.findOrCreate({ googleId: profile.id }, function (err, user) {
+            return done(err, user);
+        });
+  }
+));
+passport.serializeUser((user, done) => {
+  done(null, user._id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err, null);
+  }
+});
+
 
 async function main() {
     try {
