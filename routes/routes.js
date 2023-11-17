@@ -1,4 +1,24 @@
+const multer = require('multer');
+const path = require('path')
+
 const generateRoutes = (app, passport, User, data, fs) => {
+
+    const storage = multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, 'public/assets/images')
+        },
+        filename: (req, file, cb) => {
+            console.log(file)
+            cb(null, Date.now() + '-' + file.originalname)
+        }
+    })
+
+    const upload = multer({
+        storage: storage,
+        limits: { fileSize: 1024 * 1024 * 5 } // 5 MB limit
+    });
+    app.use(upload.fields([{ name: 'image', maxCount: 1 }, { name: 'cssImage', maxCount: 1 }]));
+
 
     app.get('/', function (req, res) {
         res.render('index', {currentUser: req.user,  data: data.countries});
@@ -7,17 +27,6 @@ const generateRoutes = (app, passport, User, data, fs) => {
     app.get('/register', function (req, res) {
         res.render('register', {currentUser: req.user});
     });
-
-    app.get('/auth/google',
-        passport.authenticate('google', { scope:
-            [ 'email', 'profile' ] }
-    ));
-
-    app.get( '/auth/google/callback',
-        passport.authenticate( 'google', {
-            successRedirect: '/',
-            failureRedirect: '/register'
-    }));
 
     app.get('/login', function (req, res) {
         res.render('login', {currentUser: req.user});
@@ -123,12 +132,12 @@ const generateRoutes = (app, passport, User, data, fs) => {
             population = req.body.population,
             territory = req.body.territory,
             avgPrice = req.body.avgPrice,
-            image = req.body.image,
+            image =    `/assets/images/${req.files.image[0].filename}`,
             continent = req.body.continent,
-            cssImage = req.body.cssImage;
+            cssImage =  `/assets/images/${req.files.cssImage[0].filename}`;
 
         const newContent = {
-            "id": generateUniqueId(data), // Implement a function to generate a unique ID
+            "id": generateUniqueId(data.countries), // Implement a function to generate a unique ID
             "name": countryName,
             "desc": desc,
             "desc2": desc2,
@@ -142,21 +151,19 @@ const generateRoutes = (app, passport, User, data, fs) => {
                 "blur": cssImage
             },
             "cities":[]
-            // Set other properties based on form input
         };
         data.countries.push(newContent);
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-
         res.redirect('/admin');
     });
 
     app.post('/addCity', (req, res) => {
         const countryName = req.body.country,
             city = req.body.cityName,
-            image = req.body.image,
+            image = `/assets/images/${req.files.image[0].filename}`,
             checkIns = req.body.checkIns,
             price = req.body.price,
-            secImage = req.body.secondImage;
+            secImage = `/assets/images/${req.files.cssImage[0].filename}`;
         const newCity = {
             "name": city,
             "image": image,
@@ -170,13 +177,35 @@ const generateRoutes = (app, passport, User, data, fs) => {
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
         res.redirect('/admin');
     })
+    
+    app.post('/addDeal', (req, res) => {
+        const city = req.body.cityName,
+            image = `/assets/images/${req.files.image[0].filename}`,
+            desc = req.body.desc,
+            duration = req.body.duration,
+            location = req.body.location,
+            type = req.body.type,
+            price = req.body.price
+        const newDeal = {
+            "id": generateUniqueId(data.deals),
+            "cityName": city,
+            "desc": desc,
+            "type": type,
+            "duration": duration,
+            "location": location,
+            "image": image,
+            "price": price,
+        }
+        data.deals.push(newDeal);
+        fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+        res.redirect('/admin');
+    })
 
     // Handle form submission to delete a country
     app.post('/deleteCountry', (req, res) => {
         const countryId = parseInt(req.body.countryId);
         data.countries = data.countries.filter(country => country.id !== countryId);
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-
         res.redirect('/admin');
     });
 
@@ -207,7 +236,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
 
 
     function generateUniqueId(someData) {
-        var someId = someData.countries.length + 1;
+        var someId = someData.length + 1;
         return someId;
 }
 };

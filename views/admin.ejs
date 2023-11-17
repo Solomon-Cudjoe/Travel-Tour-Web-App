@@ -21,7 +21,7 @@
                     <div class="col-lg-12">
                         <h1>Add Country</h1>
                     </div>
-                    <form id="reservation-form"  method="POST"  action="/addContent"
+                    <form id="reservation-form" enctype="multipart/form-data" method="POST"  action="/addContent"
                         style="
                             display: flex;
                             flex-wrap: wrap;
@@ -53,7 +53,7 @@
                         <div class="col-sm-5">
                             <fieldset>
                                 <label for="countryName">Country Territory:</label>
-                                <input type="text" id="countryName" name="territory" required><br><br>
+                                <input type="text" id="countryName" name="territory"  required><br><br>
                             </fieldset>
                         </div>
                         <div class="col-sm-5">
@@ -64,8 +64,8 @@
                         </div>
                         <div class="col-sm-5">
                             <fieldset>
-                                <label for="countryName">Country Image:</label>
-                                <input type="text" id="countryName" name="image" required><br><br>
+                                <label for="countryImage">Country Image:</label>
+                                <input type="file" id="countryImage" name="image" accept="image/*" required><br><br>
                             </fieldset>
                         </div>
                         <div class="col-sm-5">
@@ -76,36 +76,11 @@
                         </div>
                         <div class="col-sm-5">
                             <fieldset>
-                                <label for="countryName">Background Image</label>
-                                <input type="text" id="countryName" name="cssImage" required><br><br>
+                                <label for="cssImage">Background Image:</label>
+                                <input type="file" id="cssImage" name="cssImage" accept="image/*" required><br><br>
                             </fieldset>
                         </div>
-                        <!-- <div class="col-md-12">
-                            <fieldset>
-                                <label for="countryName">Country Name:</label>
-                                <input type="text" id="countryName" name="countryName" required><br><br>
-                            </fieldset>
-                        </div>
-                        <div class="col-md-12">
-                            <fieldset>
-                                <label for="countryName">Country Name:</label>
-                                <input type="text" id="countryName" name="countryName" required><br><br>
-                            </fieldset>
-                        </div>
-                        <div class="col-md-12">
-                            <fieldset>
-                                <label for="countryName">Country Name:</label>
-                                <input type="text" id="countryName" name="countryName" required><br><br>
-                            </fieldset>
-                        </div>
-                        <div class="col-md-12">
-                            <fieldset>
-                                <label for="countryName">Country Name:</label>
-                                <input type="text" id="countryName" name="countryName" required><br><br>
-                            </fieldset>
-                        </div> -->
-                    <!-- Add more fields as needed -->
-                        <button class="col-sm-5" type="submit">Add Content</button>
+                        <button class="col-md-12" type="submit">Add Content</button>
                     </form>
             </div>
         </div>
@@ -113,7 +88,7 @@
                 <div class="col-lg-12">
                     <h1>Add City</h1>
                 </div>
-                <form action="/addCity" method="post" id="reservation-form"
+                <form action="/addCity" method="post" enctype="multipart/form-data" id="reservation-form"
                     style="
                         display: flex;
                         flex-wrap: wrap;
@@ -132,8 +107,8 @@
                     </div>
                     <div class="col-sm-5">
                         <fieldset>
-                            <label for="countryName">Image Link</label>
-                            <input type="text" id="countryName" name="image" required><br><br>
+                            <label for="image">Image Link</label>
+                            <input type="file" id="image" name="image" accept="image/*" required><br><br>
                         </fieldset>
                     </div>
                     <div class="col-sm-5">
@@ -150,8 +125,8 @@
                     </div>
                     <div class="col-sm-5">
                         <fieldset>
-                            <label for="countryName">Link to second image</label>
-                            <input type="text" id="countryName" name="secondImage" required><br><br>
+                            <label for="cssImage">Link to second image</label>
+                            <input type="file" id="cssImage" name="cssImage" accept="image/*"required><br><br>
                         </fieldset>
                     </div>
                         <button class="col-sm-5" type="submit">Add Content</button>
@@ -161,7 +136,7 @@
             <div class="col-lg-12">
                 <h1>Add Deal</h1>
             </div>
-            <form action="/addDeal" method="post" id="reservation-form"
+            <form action="/addDeal" method="post" enctype="multipart/form-data" id="reservation-form"
                 style="
                     display: flex;
                     flex-wrap: wrap;
@@ -180,8 +155,8 @@
                 </div>
                 <div class="col-sm-5">
                     <fieldset>
-                        <label for="countryName">Image Link</label>
-                        <input type="text" id="countryName" name="image" required><br><br>
+                        <label for="image">Image Link</label>
+                        <input type="file" id="image" name="image" accept="image/*" required><br><br>
                     </fieldset>
                 </div>
                 <div class="col-sm-5">
