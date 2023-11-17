@@ -3,6 +3,28 @@ const path = require('path')
 
 const generateRoutes = (app, passport, User, data, fs) => {
 
+    //middlewares
+    function isLoggedIn(req, res, next) {
+        if (req.isAuthenticated()) {
+            return next();
+        }
+        res.redirect("/login");
+    }
+
+    function isAdmin(req, res, next) {
+        if (req.isAuthenticated() && req.user.isAdmin ) {
+            return next();
+        } else {
+            res.redirect("/");
+            console.log('You are not an administrator')
+        }
+    }
+
+    function generateUniqueId(someData) {
+        var someId = someData.length + 1;
+        return someId;
+    }
+    
     const storage = multer.diskStorage({
         destination: (req, file, cb) => {
             cb(null, 'public/assets/images')
@@ -23,6 +45,15 @@ const generateRoutes = (app, passport, User, data, fs) => {
     app.get('/', function (req, res) {
         res.render('index', {currentUser: req.user,  data: data.countries});
     });
+
+    app.get('/auth/google', passport.authenticate('google', {
+        scope: ['email', 'profile']
+    }))
+
+    app.get('/auth/google/callback', passport.authenticate('google', {
+        successRedirect: '/',
+        failureRedirect: '/login'
+    }))
 
     app.get('/register', function (req, res) {
         res.render('register', {currentUser: req.user});
@@ -217,27 +248,8 @@ const generateRoutes = (app, passport, User, data, fs) => {
         res.redirect('/admin');
     });
 
-    function isLoggedIn(req, res, next) {
-        if (req.isAuthenticated()) {
-            return next();
-        }
-        res.redirect("/login");
-    }
-
-    function isAdmin(req, res, next) {
-        if (req.isAuthenticated() && req.user.isAdmin ) {
-            return next();
-        } else {
-            res.redirect("/");
-            console.log('You are not an administrator')
-        }
-    }
 
 
 
-    function generateUniqueId(someData) {
-        var someId = someData.length + 1;
-        return someId;
-}
 };
 module.exports = generateRoutes;
