@@ -1,7 +1,7 @@
 {
   "name": "Travel-Tour-Web-App",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "repository": "https://github.com/Solomon-Cudjoe/Travel-Tour-Web-App.git",
   "author": "DavidAdjei <97539347+DavidAdjei@users.noreply.github.com>",
   "license": "MIT",
