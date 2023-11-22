@@ -56,7 +56,7 @@ passport.deserializeUser(async (id, done) => {
 
 async function main() {
     try {
-        await mongoose.connect("mongodb://127.0.0.1:27017/travel");
+        await mongoose.connect("mongodb+srv://dnnadjei:DAyd%402910@cluster0.0ahump1.mongodb.net/");
         console.log("Connected to MongoDB");
     } catch (error) {
         console.error("Failed to connect to MongoDB:", error);

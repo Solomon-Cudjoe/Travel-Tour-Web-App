@@ -1,4 +1,5 @@
 const multer = require('multer');
+const { type } = require('os');
 const path = require('path')
 
 const generateRoutes = (app, passport, User, data, fs) => {
@@ -12,7 +13,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
     }
 
     function isAdmin(req, res, next) {
-        if (req.isAuthenticated() && req.user.isAdmin ) {
+        if (req.isAuthenticated() && req.user.isAdmin) {
             return next();
         } else {
             res.redirect("/");
@@ -41,10 +42,16 @@ const generateRoutes = (app, passport, User, data, fs) => {
     });
     app.use(upload.fields([{ name: 'image', maxCount: 1 }, { name: 'cssImage', maxCount: 1 }]));
 
-
     app.get('/', function (req, res) {
-        res.render('index', {currentUser: req.user,  data: data.countries});
+        res.render('index', { currentUser: req.user, data: data.countries });
     });
+
+    app.get('/editCountry/:type/:id', (req, res) => {
+        const type = req.params.type;
+        const id = parseInt(req.params.id);
+        const countryToEdit = data.countries.find(country => country.id === id)
+        res.render('edit', { type: type, currentUser: req.user, country: countryToEdit })
+    })
 
     app.get('/auth/google', passport.authenticate('google', {
         scope: ['email', 'profile']
@@ -56,17 +63,18 @@ const generateRoutes = (app, passport, User, data, fs) => {
     }))
 
     app.get('/register', function (req, res) {
-        res.render('register', {currentUser: req.user});
+        res.render('register', { currentUser: req.user });
     });
 
     app.get('/login', function (req, res) {
-        res.render('login', {currentUser: req.user});
+        res.render('login', { currentUser: req.user });
     });
 
     app.get('/deals', function (req, res) {
-        res.render('deals', {currentUser: req.user, data: data.deals} );
+        res.render('deals', { currentUser: req.user, data: data.deals });
     });
 
+    
     app.get('/filter', function (req, res) {
         const location = req.query.location
         const minPrice = req.query.minPrice
@@ -79,12 +87,12 @@ const generateRoutes = (app, passport, User, data, fs) => {
         });
         console.log(filteredDeals)
         
-        res.render('deals', {currentUser: req.user, data: filteredDeals})
+        res.render('deals', { currentUser: req.user, data: filteredDeals })
 
     })
 
     app.get('/reservation', isLoggedIn, function (req, res) {
-        res.render('reservation', {currentUser: req.user});
+        res.render('reservation', { currentUser: req.user });
     });
 
     app.get("/logout", function (req, res) {
@@ -99,24 +107,24 @@ const generateRoutes = (app, passport, User, data, fs) => {
         );
     });
 
-    app.get('/admin', isAdmin , (req, res) => {
+    app.get('/admin', isAdmin, (req, res) => {
         res.render('admin', { data, currentUser: req.user });
     });
 
     app.get('/:countryName', (req, res) => {
-    const countryName = req.params.countryName;
-    const country = data.countries.find(country => country.name === countryName);
+        const countryName = req.params.countryName;
+        const country = data.countries.find(country => country.name === countryName);
         if (country) {
-        res.render('about', { country, currentUser: req.user });
-    } else {
-        res.redirect('/');
-    }
+            res.render('about', { country, currentUser: req.user });
+        } else {
+            res.redirect('/');
+        }
     });
 
     //post routes
     app.post("/register", function (req, res) {
         User.register(
-            new User({ username: req.body.username, email: req.body.email, isAdmin: false}),
+            new User({ username: req.body.username, email: req.body.email, isAdmin: false }),
             req.body.password,
             function (err, user) {
                 if (err) {
@@ -133,7 +141,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
 
     app.post("/createAdmin", function (req, res) {
         User.register(
-            new User({ username: req.body.username, email: req.body.email, isAdmin: true}),
+            new User({ username: req.body.username, email: req.body.email, isAdmin: true }),
             req.body.password,
             function (err, user) {
                 if (err) {
@@ -153,8 +161,6 @@ const generateRoutes = (app, passport, User, data, fs) => {
         failureRedirect: "/login"
     }))
 
-
-
     // Handle form submission to add content
     app.post('/addContent', (req, res) => {
         const countryName = req.body.countryName,
@@ -163,9 +169,9 @@ const generateRoutes = (app, passport, User, data, fs) => {
             population = req.body.population,
             territory = req.body.territory,
             avgPrice = req.body.avgPrice,
-            image =    `/assets/images/${req.files.image[0].filename}`,
+            image = `/assets/images/${req.files.image[0].filename}`,
             continent = req.body.continent,
-            cssImage =  `/assets/images/${req.files.cssImage[0].filename}`;
+            cssImage = `/assets/images/${req.files.cssImage[0].filename}`;
 
         const newContent = {
             "id": generateUniqueId(data.countries), // Implement a function to generate a unique ID
@@ -181,7 +187,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
                 "background": cssImage,
                 "blur": cssImage
             },
-            "cities":[]
+            "cities": []
         };
         data.countries.push(newContent);
         fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
@@ -195,7 +201,9 @@ const generateRoutes = (app, passport, User, data, fs) => {
             checkIns = req.body.checkIns,
             price = req.body.price,
             secImage = `/assets/images/${req.files.cssImage[0].filename}`;
+        const cityToUpdate = data.countries.find(country => country.name === countryName).cities;
         const newCity = {
+            "id": generateUniqueId(cityToUpdate),
             "name": city,
             "image": image,
             "checkIns": checkIns,
@@ -248,8 +256,47 @@ const generateRoutes = (app, passport, User, data, fs) => {
         res.redirect('/admin');
     });
 
+    //put routes
+    app.post('/editCountry/:id', (req, res) => {
+    const id = parseInt(req.params.id);
 
+    const countryToUpdate = data.countries.find(country => country.id === id);
 
+    const countryName = req.body.countryName,
+        desc = req.body.desc,
+        desc2 = req.body.desc2,
+        population = req.body.population,
+        territory = req.body.territory,
+        avgPrice = req.body.avgPrice,
+        image = `/assets/images/${req.files.image[0].filename}`,
+        continent = req.body.continent,
+        cssImage = `/assets/images/${req.files.cssImage[0].filename}`;
 
-};
+    const newContent = {
+        "id": countryToUpdate.id,
+        "name": countryName,
+        "desc": desc,
+        "desc2": desc2,
+        "population": population,
+        "territory": territory,
+        "avgPrice": avgPrice,
+        "image": image,
+        "continent": continent,
+        "css": {
+            "background": cssImage,
+            "blur": cssImage
+        },
+        "cities": countryToUpdate.cities
+    };
+
+    if (countryToUpdate) {
+        Object.assign(countryToUpdate, newContent);
+        fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+        res.redirect('/admin');
+    } else {
+        res.status(404).json({ success: false, message: 'Country not found' });
+    }
+});
+
+}
 module.exports = generateRoutes;

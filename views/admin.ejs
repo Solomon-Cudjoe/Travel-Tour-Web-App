@@ -227,9 +227,10 @@
             <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col"scope="col">Population</th>
-                    <th scope="col"scope="col">Continent</th>
-                    <th scope="col"scope="col">Delete</th>
+                    <th scope="col">Population</th>
+                    <th scope="col">Continent</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -243,6 +244,9 @@
                                 <input type="hidden" name="countryId" value="<%= country.id %>">
                                 <button type="submit">Delete</button>
                             </form>
+                        </td>
+                        <td>
+                            <a href="/editCountry/country/<%=country.id%>">Edit</a>
                         </td>
                     </tr>
                 <% }); %>
@@ -258,6 +262,7 @@
                     <th scope="col">Type</th>
                     <th scope="col">Duration</th>
                     <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -271,6 +276,9 @@
                                 <input type="hidden" name="dealId" value="<%= deal.id %>">
                                 <button type="submit">Delete</button>
                             </form>
+                        </td>
+                        <td>
+                            <a href="/editDeal/deal/<%=deal.id%>"></a>
                         </td>
                     </tr>
                 <% }); %>

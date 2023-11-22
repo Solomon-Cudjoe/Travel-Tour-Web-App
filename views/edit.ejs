@@ -1,0 +1,74 @@
+<%- include('header'); -%>
+    <% if(type === 'country') {%> 
+        <div class="container">
+                <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Add Country</h1>
+                        </div>
+                        <form id="reservation-form" enctype="multipart/form-data" method="post"  action="/editCountry/<%= country.id %>"
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 3rem;">
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryName">Country Name:</label>
+                                    <input type="text" id="countryName" name="countryName" value=<%= country.name %> required><br><br>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryName">Country Description:</label>
+                                    <input type="text" id="countryName" name="desc" value="<%= country.desc %>" required><br><br>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryName">Country Short Description:</label>
+                                    <input name="desc2" id="countrySecDesc" cols="30" rows="10" value="<%= country.desc2 %>" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryName">Country Population:</label>
+                                    <input type="text" id="countryName" name="population" value=<%= country.population %> required><br><br>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryName">Country Territory:</label>
+                                    <input type="text" id="countryName" name="territory" value=<%= country.territory %> required><br><br>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryName">Average Housing Price:</label>
+                                    <input type="text" id="countryName" name="avgPrice" value=<%= country.avgPrice %> required><br><br>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryImage">Country Image:</label>
+                                    <input type="file" id="countryImage" name="image" accept="image/*" required><br><br>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="countryName">Continent:</label>
+                                    <input type="text" id="countryName" name="continent" value=<%= country.continent %> required><br><br>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-5">
+                                <fieldset>
+                                    <label for="cssImage">Background Image:</label>
+                                    <input type="file" id="cssImage" name="cssImage" accept="image/*" required><br><br>
+                                </fieldset>
+                            </div>
+                            <button class="col-md-12" type="submit">Edit Content</button>
+                        </form>
+                </div>
+            </div>
+    <% } else if (type === 'city'){ %>
+        <h1>nothing to show</h1>
+    <% } %>
+<%- include('footer'); -%>

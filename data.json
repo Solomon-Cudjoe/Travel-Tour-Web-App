@@ -16,6 +16,7 @@
       },
       "cities": [
         {
+          "id": 1,
           "name": "Havana",
           "image": "assets/images/cities-01.jpg",
           "checkIns": 234,
@@ -25,6 +26,7 @@
           }
         },
         {
+          "id": 2,
           "name": "Kingston",
           "image": "assets/images/cities-02.jpg",
           "checkIns": 234,
@@ -34,6 +36,7 @@
           }
         },
         {
+          "id": 3,
           "name": "George Town",
           "image": "assets/images/cities-03.jpg",
           "checkIns": 234,
@@ -43,6 +46,7 @@
           }
         },
         {
+          "id": 4,
           "name": "Santo Domingo",
           "image": "assets/images/cities-04.jpg",
           "checkIns": 234,
@@ -58,17 +62,18 @@
       "name": "Switzerland",
       "desc": "Switzerland, nestled in the heart of the Alps, is a picturesque European nation celebrated for its natural beauty and precision engineering. Its stunning landscapes encompass snow-capped mountains, pristine lakes, and lush meadows. Renowned for Swiss watches, chocolates, and efficient public transport, the country is a model of precision and quality. Switzerland's charming cities, including Zurich and Geneva, are centers of finance and culture, while its ski resorts and hiking trails provide year-round outdoor adventures.",
       "desc2": "Nestled in the Alps, Switzerland is celebrated for precision engineering, stunning landscapes, and vibrant cities like Zurich and Geneva, making it a model of efficiency and natural beauty.",
-      "population": 8.66,
-      "territory": 41.29,
-      "avgPrice": 1100.2,
-      "image": "assets/images/country-02.jpg",
-      "continent": "North America",
+      "population": "8.66",
+      "territory": "41.29",
+      "avgPrice": "1100.2",
+      "image": "/assets/images/1700484484256-country-02.jpg",
+      "continent": "North",
       "css": {
-        "background": "/assets/images/about-content-bg.jpg",
-        "blur": "/assets/images/about-content-bg.jpg"
+        "background": "/assets/images/1700484484279-best-05.jpg",
+        "blur": "/assets/images/1700484484279-best-05.jpg"
       },
       "cities": [
         {
+          "id": 1,
           "name": "Zurich",
           "image": "assets/images/cities-01.jpg",
           "checkIns": 234,
@@ -78,6 +83,7 @@
           }
         },
         {
+          "id": 2,
           "name": "Lucerne",
           "image": "assets/images/cities-02.jpg",
           "checkIns": 234,
@@ -87,6 +93,7 @@
           }
         },
         {
+          "id": 3,
           "name": "Bern",
           "image": "assets/images/cities-03.jpg",
           "checkIns": 234,
@@ -96,6 +103,7 @@
           }
         },
         {
+          "id": 4,
           "name": "Santo Domingo",
           "image": "assets/images/cities-04.jpg",
           "checkIns": 234,
@@ -122,6 +130,7 @@
       },
       "cities": [
         {
+          "id": 1,
           "name": "Paris",
           "image": "assets/images/cities-01.jpg",
           "checkIns": 500,
@@ -131,6 +140,7 @@
           }
         },
         {
+          "id": 2,
           "name": "Lyon",
           "image": "assets/images/cities-02.jpg",
           "checkIns": 300,
@@ -140,6 +150,7 @@
           }
         },
         {
+          "id": 3,
           "name": "Marseille",
           "image": "assets/images/cities-03.jpg",
           "checkIns": 400,
@@ -149,6 +160,7 @@
           }
         },
         {
+          "id": 4,
           "name": "Bordeaux",
           "image": "assets/images/cities-01.jpg",
           "checkIns": 200,
@@ -158,6 +170,7 @@
           }
         },
         {
+          "id": 5,
           "name": "Strasbourg",
           "image": "assets/images/cities-02.jpg",
           "checkIns": 289,
@@ -167,6 +180,7 @@
           }
         },
         {
+          "id": 6,
           "name": "Nice",
           "image": "assets/images/cities-03.jpg",
           "checkIns": 350,
@@ -176,6 +190,7 @@
           }
         },
         {
+          "id": 7,
           "name": "Annecy",
           "image": "assets/images/cities-04.jpg",
           "checkIns": 250,
@@ -191,17 +206,18 @@
       "name": "ThaiLand",
       "desc": "Thailand, a vibrant Southeast Asian gem, entices with its exotic charm and diverse experiences. It's a land of contrast, from bustling metropolises like Bangkok to tranquil temples and tropical islands. Rich in culture and cuisine, it offers tantalizing street food, ancient temples, and colorful festivals. The country's idyllic beaches, lush jungles, and friendly locals make it a popular destination for adventure seekers and those seeking relaxation. Thailand's unique blend of tradition and modernity creates a captivating tapestry for travelers to explore.",
       "desc2": "Thailand's exotic charm, vibrant cities, and stunning landscapes draw travelers with a mix of culture, cuisine, and tropical beauty, offering a blend of tradition and modernity.",
-      "population": 69.86,
-      "territory": 513.12,
-      "avgPrice": 165.45,
-      "image": "assets/images/country-01.jpg",
+      "population": "69.86",
+      "territory": "513.12",
+      "avgPrice": "165.45",
+      "image": "/assets/images/1700484559470-best-05.jpg",
       "continent": "Asia",
       "css": {
-        "background": "/assets/images/about-content-bg.jpg",
-        "blur": "/assets/images/about-content-bg.jpg"
+        "background": "/assets/images/1700484559477-best-03.jpg",
+        "blur": "/assets/images/1700484559477-best-03.jpg"
       },
       "cities": [
         {
+          "id": 1,
           "name": "Havana",
           "image": "assets/images/cities-01.jpg",
           "checkIns": 234,
@@ -211,6 +227,7 @@
           }
         },
         {
+          "id": 2,
           "name": "Kingston",
           "image": "assets/images/cities-02.jpg",
           "checkIns": 234,
@@ -220,6 +237,7 @@
           }
         },
         {
+          "id": 3,
           "name": "George Town",
           "image": "assets/images/cities-03.jpg",
           "checkIns": 234,
@@ -229,6 +247,7 @@
           }
         },
         {
+          "id": 4,
           "name": "Santo Domingo",
           "image": "assets/images/cities-04.jpg",
           "checkIns": 234,
